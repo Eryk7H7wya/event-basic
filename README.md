@@ -6,7 +6,7 @@ Event registration app
 - [Create React App](https://github.com/facebook/create-react-app) to generate the app.
 - [Namelix](https://namelix.com/) to generate app name.
 - [React hook form](https://react-hook-form.com/) to handle form.
-
+- [React Router](https://reactrouter.com/)
 
 ## Task
 
