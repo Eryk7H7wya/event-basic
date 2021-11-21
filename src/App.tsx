@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import { EventForm } from './components/EventForm';
 import { emptyEvent, EventFormContext } from './EventFormContext';
