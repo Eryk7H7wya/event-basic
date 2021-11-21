@@ -7,7 +7,7 @@ export const SubmittedPage = () => {
 
 	return (<div>
 		<div>Event name: {event.name}</div>
-		<div>Date: {event.date}</div>
+		<div>Date: {event.date?.toString()}</div>
 		<div>Address: {event.location}</div>
 	</div>)
 }

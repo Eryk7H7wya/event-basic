@@ -1,13 +1,13 @@
 import React from 'react';
 
 export interface IEventForm {
-	date: string;
+	date?: Date;
 	location: string;
 	name: string;
 }
 
 export const emptyEvent: IEventForm = {
-	date: '',
+	date: undefined,
 	location: '',
 	name: '',
 }

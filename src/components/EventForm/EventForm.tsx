@@ -1,7 +1,10 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
+import DatePicker from 'react-datepicker';
 
 import { EventFormContext, IEventForm } from '../../EventFormContext';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 interface IEventFormProps {
 	submitFormValue: (eventForm:IEventForm) => void;
@@ -10,7 +13,7 @@ interface IEventFormProps {
 export const EventForm = ({submitFormValue}: IEventFormProps) => {
 	const initialFormValue = React.useContext(EventFormContext);
 
-	const { register, handleSubmit, formState: { errors } } = useForm<IEventForm>();
+	const { register, handleSubmit, formState: { errors }, control } = useForm<IEventForm>();
 
 	return (<form onSubmit={handleSubmit((value)=>{
 		submitFormValue(value);
@@ -33,9 +36,19 @@ export const EventForm = ({submitFormValue}: IEventFormProps) => {
 		</div>
 		<div>
 			<label>Date</label>
-			<input 
+			<Controller
+				name="date"
+				control={control}
+				rules={{required: true}}
 				defaultValue={initialFormValue.date}
-				{...register('date', {required: true})}
+				render={({ field }) => {
+					return (
+						<DatePicker
+							{...field}
+							value={field?.value?.toString()}
+							autoComplete="off"
+						/>)
+				}}
 			/>
 			{errors.date && <div>Date is required.</div>}
 		</div>
