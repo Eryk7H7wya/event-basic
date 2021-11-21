@@ -8,26 +8,24 @@ import { SubmittedPage } from './components/Submitted';
 import './App.css';
 
 enum EventFormRoutes {
-  form='/',
-  submitted='/submitted'
+  formPage='/',
+  submittedPage='/submitted'
 }
 
 function App() {
   const [formValue, setFormValue] = React.useState(emptyEvent);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const formElement = (<EventForm submitFormValue={(v)=>{
-    setFormValue(v);
-    navigate(EventFormRoutes.submitted)
+  const formElement = (<EventForm submitFormValue={(formValue)=>{
+    setFormValue(formValue);
+    navigate(EventFormRoutes.submittedPage);
   }} />);
-
-  const submittedPageElement = (<SubmittedPage/>)
 
   return (
     <EventFormContext.Provider value={formValue}>
       <Routes>
-        <Route path={EventFormRoutes.submitted} element={submittedPageElement} />
-        <Route path={EventFormRoutes.form} element={formElement} />
+        <Route path={EventFormRoutes.submittedPage} element={<SubmittedPage/>} />
+        <Route path={EventFormRoutes.formPage} element={formElement} />
       </Routes>
     </EventFormContext.Provider>
   );
