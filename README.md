@@ -3,8 +3,8 @@ Event registration app
 
 # Tools
 
-[Create React App](https://github.com/facebook/create-react-app) was used to generate the app.
-[Namelix](https://namelix.com/) was used to generate app name.
+- [Create React App](https://github.com/facebook/create-react-app) was used to generate the app.
+- [Namelix](https://namelix.com/) was used to generate app name.
 
 # Plan / TODO
 
