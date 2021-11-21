@@ -1,18 +1,53 @@
 # event-basic
 Event registration app
 
-# Tools used
+## Tools used
 
 - [Create React App](https://github.com/facebook/create-react-app) to generate the app.
 - [Namelix](https://namelix.com/) to generate app name.
 
-# Plan / TODO
+
+## Task
+
+```
+1. Create a simple event registration app that consists of form and success pages.
+
+The form should have the following inputs:
+
+Event name
+Address (fetched from ‘Google Places Autocomplete’ api)
+Calendar date input
+All inputs are required and should have appropriate validations.
+
+The error messages should be clearly visible.
+
+ 
+
+2. On form submit, route to a new success page and print submitted form values. 
+
+ 
+
+3. (Bonus) Convert a given date into an interactive ‘time left’ counter.The ideal stack React + Typescript
+
+ 
+
+Front end UI library of your choice
+We recommend using a form handler and context for global data storage.
+Particular interest will be paid to component structure and clean, self explanatory code.
+Attention to detail and ability to stand back behind the chosen stack would be great.
+
+```
+
+## Plan / TODO
 
 1. [x] Create React app
-2. [x] Add TS support
-3. [ ] Add simple form controls
-4. [ ] Handle submit and save results
-5. [ ] Display submitted results on different page
+1. [x] Add TS support
+1. [ ] Add simple form controls
+1. [ ] Handle form submit and save results
+1. [ ] Add Router
+1. [ ] Display submitted results on the different page
+1. [ ] Add Google Places autocomplete
+1. [ ] Add some styling
 
 # Getting Started with Create React App
 
