@@ -48,6 +48,7 @@ Attention to detail and ability to stand back behind the chosen stack would be g
 1. [x] Add validation
 1. [x] Add Router
 1. [x] Display submitted results on the different page
+1. [x] Proper input / format for date input
 1. [ ] Add Google Places autocomplete
 1. [ ] Add some styling
 
