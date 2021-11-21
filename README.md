@@ -1,18 +1,18 @@
 # event-basic
 Event registration app
 
-# Tools
+# Tools used
 
-- [Create React App](https://github.com/facebook/create-react-app) was used to generate the app.
-- [Namelix](https://namelix.com/) was used to generate app name.
+- [Create React App](https://github.com/facebook/create-react-app) to generate the app.
+- [Namelix](https://namelix.com/) to generate app name.
 
 # Plan / TODO
 
-1. Create React app
-2. Add TS support
-3. Add simple form controls
-4. Handle submit and save results
-5. Display submitted results on different page
+1. [x] Create React app
+2. [x] Add TS support
+3. [ ] Add simple form controls
+4. [ ] Handle submit and save results
+5. [ ] Display submitted results on different page
 
 # Getting Started with Create React App
 
