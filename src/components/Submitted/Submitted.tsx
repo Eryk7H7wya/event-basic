@@ -6,8 +6,8 @@ export const SubmittedPage = () => {
 	const event = React.useContext(EventFormContext);
 
 	return (<div>
-		<div>{event.date}</div>
-		<div>{event.location}</div>
-		<div>{event.name}</div>
+		<div>Event name: {event.name}</div>
+		<div>Date: {event.date}</div>
+		<div>Address: {event.location}</div>
 	</div>)
 }

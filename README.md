@@ -46,8 +46,8 @@ Attention to detail and ability to stand back behind the chosen stack would be g
 1. [x] Add simple form controls
 1. [x] Handle form submit and save results
 1. [x] Add validation
-1. [ ] Add Router
-1. [ ] Display submitted results on the different page
+1. [x] Add Router
+1. [x] Display submitted results on the different page
 1. [ ] Add Google Places autocomplete
 1. [ ] Add some styling
 

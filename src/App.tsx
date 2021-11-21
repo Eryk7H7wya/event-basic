@@ -16,10 +16,14 @@ function App() {
   const [formValue, setFormValue] = React.useState(emptyEvent);
   const navigate = useNavigate();
 
-  const formElement = (<EventForm submitFormValue={(formValue)=>{
-    setFormValue(formValue);
-    navigate(EventFormRoutes.submittedPage);
-  }} />);
+  const formElement = (
+    <EventForm
+      submitFormValue={(formValue)=>{
+        setFormValue(formValue);
+        navigate(EventFormRoutes.submittedPage);
+      }}
+    />
+  );
 
   return (
     <EventFormContext.Provider value={formValue}>
