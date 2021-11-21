@@ -1,12 +1,12 @@
 import React from "react";
 
-interface EventForm {
+export interface IEventForm {
 	date: string;
 	location: string;
 	name: string;
 }
 
-export const emptyEvent: EventForm = {
+export const emptyEvent: IEventForm = {
 	date: '',
 	location: '',
 	name: '',
