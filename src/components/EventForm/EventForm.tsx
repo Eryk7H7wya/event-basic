@@ -29,7 +29,7 @@ export const EventForm = ({submitFormValue}: IEventFormProps) => {
 				defaultValue={initialFormValue.location}
 				{...register('location', {required: true})}
 			/>
-			{errors.address && <div>Address is required.</div>}
+			{errors.location && <div>Address is required.</div>}
 		</div>
 		<div>
 			<label>Date</label>
