@@ -1,4 +1,5 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
 import { EventFormContext, IEventForm } from '../../EventFormContext';
 
@@ -7,38 +8,36 @@ interface IEventFormProps {
 }
 
 export const EventForm = ({submitFormValue}: IEventFormProps) => {
-	const [formValue, setFormValue]= React.useState(React.useContext(EventFormContext)) 
+	const initialFormValue = React.useContext(EventFormContext);
 
-	return (<form onSubmit={(e)=>{
-		submitFormValue(formValue);
-		e.preventDefault();
-	}}>
+	const { register, handleSubmit, formState: { errors } } = useForm();
+
+	return (<form onSubmit={handleSubmit((value)=>{
+		submitFormValue(initialFormValue);
+	})}>
 		<div>
 			<label>Event name</label>
 			<input 
-				onChange={(e)=>setFormValue({...formValue, name: e.target.value})}
-				required
-				type="text" 
-				value={formValue.name} 
-				/>
+				defaultValue={initialFormValue.name}
+				{...register('name', {required: true})}
+			/>
+			{errors.name && <div>Event name is required.</div>}
 		</div>
 		<div>
 			<label>Address</label>
 			<input 
-				onChange={(e)=>setFormValue({...formValue, location: e.target.value})}
-				required
-				type="text" 
-				value={formValue.location} 
+				defaultValue={initialFormValue.location}
+				{...register('location', {required: true})}
 			/>
+			{errors.address && <div>Address is required.</div>}
 		</div>
 		<div>
 			<label>Date</label>
 			<input 
-				onChange={(e)=>setFormValue({...formValue, date: e.target.value})}
-				required
-				type="text" 
-				value={formValue.date} 
+				defaultValue={initialFormValue.date}
+				{...register('date', {required: true})}
 			/>
+			{errors.date && <div>Date is required.</div>}
 		</div>
 		<button type="submit">Submit</button>
 	</form>);
