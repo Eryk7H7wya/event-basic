@@ -15,15 +15,30 @@ export const EventForm = ({submitFormValue}: IEventFormProps) => {
 	}}>
 		<div>
 			<label>Event name</label>
-			<input type="text" value={formValue.name} onChange={(e)=>setFormValue({...formValue, name: e.target.value})}></input>
+			<input 
+				onChange={(e)=>setFormValue({...formValue, name: e.target.value})}
+				required
+				type="text" 
+				value={formValue.name} 
+				/>
 		</div>
 		<div>
 			<label>Address</label>
-			<input type="text" value={formValue.location} onChange={(e)=>setFormValue({...formValue, location: e.target.value})}></input>
+			<input 
+				onChange={(e)=>setFormValue({...formValue, location: e.target.value})}
+				required
+				type="text" 
+				value={formValue.location} 
+			/>
 		</div>
 		<div>
 			<label>Date</label>
-			<input type="text" value={formValue.date} onChange={(e)=>setFormValue({...formValue, date: e.target.value})}></input>
+			<input 
+				onChange={(e)=>setFormValue({...formValue, date: e.target.value})}
+				required
+				type="text" 
+				value={formValue.date} 
+			/>
 		</div>
 		<button type="submit">Submit</button>
 	</form>);
