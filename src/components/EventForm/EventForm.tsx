@@ -10,10 +10,10 @@ interface IEventFormProps {
 export const EventForm = ({submitFormValue}: IEventFormProps) => {
 	const initialFormValue = React.useContext(EventFormContext);
 
-	const { register, handleSubmit, formState: { errors } } = useForm();
+	const { register, handleSubmit, formState: { errors } } = useForm<IEventForm>();
 
 	return (<form onSubmit={handleSubmit((value)=>{
-		submitFormValue(initialFormValue);
+		submitFormValue(value);
 	})}>
 		<div>
 			<label>Event name</label>

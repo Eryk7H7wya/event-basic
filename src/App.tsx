@@ -1,10 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { createBrowserHistory } from "history";
-
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 
 import { EventForm } from './components/EventForm';
 import { emptyEvent, EventFormContext } from './EventFormContext';
+import { SubmittedPage } from './components/Submitted';
 
 import './App.css';
 
@@ -15,21 +14,22 @@ enum EventFormRoutes {
 
 function App() {
   const [formValue, setFormValue] = React.useState(emptyEvent);
-  const history = createBrowserHistory()
+  const navigate = useNavigate()
 
-  const formElement = <EventForm submitFormValue={(v)=>{
+  const formElement = (<EventForm submitFormValue={(v)=>{
     setFormValue(v);
-    history.push(EventFormRoutes.submitted)
-  }} />
+    navigate(EventFormRoutes.submitted)
+  }} />);
+
+  const submittedPageElement = (<SubmittedPage/>)
 
   return (
-    <BrowserRouter>
-      <EventFormContext.Provider value={formValue}>
-        <Routes>
-          <Route path={EventFormRoutes.form} element={formElement} />
-        </Routes>
-      </EventFormContext.Provider>
-    </BrowserRouter>
+    <EventFormContext.Provider value={formValue}>
+      <Routes>
+        <Route path={EventFormRoutes.submitted} element={submittedPageElement} />
+        <Route path={EventFormRoutes.form} element={formElement} />
+      </Routes>
+    </EventFormContext.Provider>
   );
 }
 
